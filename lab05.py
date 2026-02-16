@@ -34,10 +34,9 @@ def generate_problem(operation: str, difficulty: int) -> int:
 
     # IF the problem is division, use this code to make the first number the higher one
     if operation == "division": #assigns a max variable to first num and then  the min to second num
-        larger = max(first_num, second_num)
-        smaller = min(first_num, second_num)
-        first_num = larger
-        second_num = smaller
+        first_num = max(first_num, second_num)
+        second_num = min(first_num, second_num)
+
 
     # eval() returns the solution to your problem.
     answer = int(eval(f"{first_num} {symbol} {second_num}"))
