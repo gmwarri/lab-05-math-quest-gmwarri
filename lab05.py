@@ -40,7 +40,7 @@ def generate_problem(operation: str, difficulty: int) -> int:
     answer = int(eval(f"{first_num} {symbol} {second_num}"))
 
     #TODO: Print the operation and return the solution.
-    print(f"{first_num} {symbol} {second_num} = ?")
+    print(f"{first_num} {symbol} {second_num}")
 
     return answer
 
@@ -82,12 +82,14 @@ def get_valid_problem_count(operation):
         Prints out a random math problem difficulty
     """
     print(f"How many types of {operation} problems would you like to solve?")
-    
-    while True:
+    valid_input = False
+    num_problems = 0
+
+    while not valid_input:
         try:
             num_problems = int(input().strip())
             if num_problems > 0:
-                return num_problems
+                valid_input = True
             else:
                 print("Please enter a number greater than 0!")
         except ValueError:
@@ -120,10 +122,9 @@ if __name__ == "__main__":
 
     
         for i in range(num_problems):
-            print(f"Problem {i + 1} of {num_problems}")
             
             answer = generate_problem(operation, difficulty)
-            user_answer = input("Answer: ").strip()
+            user_answer = input().strip()
 
             if user_answer == str(answer):
                 print("Correct! Next problem...")
