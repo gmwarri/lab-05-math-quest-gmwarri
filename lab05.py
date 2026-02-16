@@ -146,10 +146,10 @@ if __name__ == "__main__":
             print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
         else:
             if difficulty == 1: 
-                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
+                print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
             else:
                 difficulty -= 1
-                print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
+                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
 
 
         print("Continue? (enter 'quit' to exit)")
