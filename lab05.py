@@ -1,3 +1,13 @@
+"""
+Author:         Griffin Warrington
+Date:           1/30/26
+Assignment:     Lab 05-math-quest
+Course:         CPSC1051
+Lab Section:    CRN 002
+
+"""
+
+
 # ---------- DO NOT EDIT ------------
 import random 
 random.seed(256)
