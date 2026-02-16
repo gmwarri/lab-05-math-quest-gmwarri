@@ -42,6 +42,17 @@ def generate_problem(operation: str, difficulty: int) -> int:
     return answer
 
 def get_valid_operation():
+    """
+    Generates a random math problem (+, -, *, /) based on the given operation and difficulty. The operation is a string that says what operation the problem will be performing.
+    The difficulty is from 1-infinity. The more difficult the problem, the bigger the numbers are in the equation.
+
+    Args:
+        operation: The type of operation that the problem will generate (addition, subtraction, multiplication, division)
+        difficulty: The difficulty for the problem from 1-infinity that determines how big the numbers are.
+    
+    Returns:
+        Prints out a random math problem difficulty
+    """
     valid_ops = ("addition", "subtraction", "multiplication", "division")
 
     operation = input().strip()
@@ -56,14 +67,28 @@ def get_valid_operation():
 
 
 def get_valid_problem_count(operation):
+    """
+    Generates a random math problem (+, -, *, /) based on the given operation and difficulty. The operation is a string that says what operation the problem will be performing.
+    The difficulty is from 1-infinity. The more difficult the problem, the bigger the numbers are in the equation.
+
+    Args:
+        operation: The type of operation that the problem will generate (addition, subtraction, multiplication, division)
+        difficulty: The difficulty for the problem from 1-infinity that determines how big the numbers are.
+    
+    Returns:
+        Prints out a random math problem difficulty
+    """
     print(f"How many types of {operation} problems would you like to solve?")
     
-    num_problems = int(input().strip())
-    
-    #stop non-common operations
-    while num_problems <= 0: 
-        print("Please enter a number greater than 0!")
-        num_problems = int(input().strip())
+    while True:
+        try:
+            num_problems = int(input().strip())
+            if num_problems > 0:
+                return num_problems
+            else:
+                print("Please enter a number greater than 0!")
+        except ValueError:
+            print("Please enter a number greater than 0!")
         
     return num_problems
     
