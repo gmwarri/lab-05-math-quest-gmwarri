@@ -154,10 +154,12 @@ if __name__ == "__main__":
             else:
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
         else:
-            print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
-
+            print("why am i getting different messages in gradescope")
+        
+       
         print("Continue? (enter 'quit' to exit)")
         cont = input().strip().lower()
+
 
 
 
