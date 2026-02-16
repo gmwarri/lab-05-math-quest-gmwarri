@@ -30,8 +30,11 @@ def generate_problem(operation: str, difficulty: int) -> int:
     second_num = random.randint(1, (10 ** difficulty))
 
     # IF the problem is division, use this code to make the first number the higher one
-    first_num = max([first_num, second_num])
-    second_num = min([first_num, second_num])
+    if operation == "division":
+        larger = max(first_num, second_num)
+        smaller = min(first_num, second_num)
+        first_num = larger
+        second_num = smaller
 
     # eval() returns the solution to your problem.
     answer = int(eval(f"{first_num} {symbol} {second_num}"))
@@ -143,7 +146,7 @@ if __name__ == "__main__":
                 difficulty -= 1
                 print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
             else:
-                print("You are already at the lowest difficulty!")
+                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
 
 
         print("Continue? (enter 'quit' to exit)")
