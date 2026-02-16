@@ -140,29 +140,23 @@ if __name__ == "__main__":
 
         final_score += temp_score
         total_questions += num_problems
+
+
         if temp_score > num_problems / 2:
             difficulty += 1
             print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
         else:
-            if difficulty > 1:
+            if difficulty == 0:
+                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
+            elif difficulty > 1:
                 difficulty -= 1
                 print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time!")
             else:
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
-        """
-        if temp_score > num_problems / 2:
-            difficulty += 1
-            print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
-        else:
-            if difficulty == 1: 
-                print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
-            else:
-                difficulty -= 1
-                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
-        """
 
         print("Continue? (enter 'quit' to exit)")
-        cont = input().strip()   
+        cont = input().strip().lower()
+
 
 
     print(f"Congrats! Your final score was {final_score} out of {total_questions}.")
