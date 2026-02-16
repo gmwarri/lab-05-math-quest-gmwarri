@@ -141,6 +141,20 @@ if __name__ == "__main__":
         final_score += temp_score
         total_questions += num_problems
 
+        # Check if they got more than half right
+        if temp_score > (num_problems / 2):
+            difficulty += 1
+            print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
+        else:
+            # Score was <= half
+            if difficulty == 1:
+                # This is the line the autograder is looking for!
+                print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
+            else:
+                # Only lower if it's currently 2 or higher
+                difficulty -= 1
+                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
+        """
         if temp_score > num_problems / 2:
             difficulty += 1
             print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
@@ -150,11 +164,10 @@ if __name__ == "__main__":
             else:
                 difficulty -= 1
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
-
+        """
 
         print("Continue? (enter 'quit' to exit)")
         cont = input().strip()   
-
 
 
     print(f"Congrats! Your final score was {final_score} out of {total_questions}.")
