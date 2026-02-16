@@ -146,7 +146,7 @@ if __name__ == "__main__":
             difficulty += 1
             print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
         else:
-            if difficulty == 0:
+            if difficulty == 1:
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
             elif difficulty > 1:
                 difficulty -= 1
