@@ -151,6 +151,7 @@ if __name__ == "__main__":
             print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
 
         # examines where the dificulty is and lowers it to a min of 1
+        """
         elif temp_score <= num_problems:
             if difficulty == 1:
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
@@ -161,10 +162,20 @@ if __name__ == "__main__":
 
             else:
                 print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
+            """
+        if temp_score > num_problems / 2:
+            difficulty += 1
+            print(f"Your score was {temp_score}/{num_problems}. We will be increasing the difficulty for next time!")
+
+        else:
+            if difficulty == 1:
+                print(f"Your score was {temp_score}/{num_problems}. You are already at the lowest difficulty!")
+            else:
+                difficulty -= 1
+                print(f"Your score was {temp_score}/{num_problems}. We will be lowering the difficulty for next time.")
 
         #this thing is not working and the lab05b and gradescope are not lineing up
-        else:
-            print("why am i getting different messages in gradescope")
+
         
        #asks user if they want to continue
         print("Continue? (enter 'quit' to exit)")
